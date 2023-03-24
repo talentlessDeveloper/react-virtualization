@@ -20,13 +20,13 @@ const OuterBox = ({ items }: OuterBoxProps) => {
 
   console.log({ startIndex, endIndex, length: items.length });
 
-  const displayMovieList = () => {
+  const displayUserList = () => {
     const displayItems = items.slice(startIndex, endIndex);
-    const movieList = displayItems.map((item) => {
+    const userList = displayItems.map((item) => {
       return <Item key={item.login.uuid} item={item} itemHeight={itemHeight} />;
     });
 
-    return movieList;
+    return userList;
   };
   return (
     <div
@@ -43,7 +43,7 @@ const OuterBox = ({ items }: OuterBoxProps) => {
         className='innerbox'
         style={{ height: innerHeight, position: "relative" }}
       >
-        {displayMovieList()}
+        {displayUserList()}
       </div>
     </div>
   );
